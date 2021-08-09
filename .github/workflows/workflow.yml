@@ -10,7 +10,8 @@ jobs:
       my_secret: $
     runs-on: ubuntu-latest
     steps:
-      - uses: ki502/flutter_web.github.io
+      - uses: actions/checkout@v1
+      - uses: subosito/flutter-action@v1
         with:
           channel: 'dev'
       - run: flutter config --enable-web
