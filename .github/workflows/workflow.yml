@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          token: ${{ secrets.flutter_web }}
+          repo-token: ${{ secrets.flutter_web }}
       - uses: subosito/flutter-action@v1
         with:
           flutter-version: '2.2.0'
