@@ -22,7 +22,8 @@ jobs:
       - run: flutter build web --web-renderer html
         working-directory: ./
       - run: |
-          cd build/web
+          cd /build/web
+          ls
           git init
           git config --global user.email ki502@naver.com
           git config --global user.name ki502
