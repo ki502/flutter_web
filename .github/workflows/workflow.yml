@@ -10,7 +10,7 @@ jobs:
       my_secret: $
     runs-on: ubuntu-latest
     steps:
-      - uses: ki502/flutter_web
+      - uses: ki502/flutter_web.github.io
         with:
           channel: 'dev'
       - run: flutter config --enable-web
