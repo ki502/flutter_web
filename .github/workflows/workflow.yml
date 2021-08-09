@@ -27,7 +27,7 @@ jobs:
           git config --global user.email ki502@naver.com
           git config --global user.name ki502
           git status
-          git remote add origin https://github.com/ki502/flutter_web.github.io.git
+          git remote add origin https://$@github.com/ki502/flutter_web.github.io.git
           git checkout -b gh-pages
           git add --all
           git commit -m "update"
