@@ -7,8 +7,6 @@ on:
 jobs:
   build:
     name: Build Web
-    env:
-      my_secret: $
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -26,7 +24,7 @@ jobs:
           git init
           git config --global user.email ki502@naver.com
           git config --global user.name ki502
-          git remote add origin  https://$@github.com/ki502/flutter_web.git
+          git remote add origin  https://x-access-token:${{ secrets.FLUTTER_WEB }}@github.com/ki502/flutter_web.git
           git checkout -b pages
           git add --all
           git status
