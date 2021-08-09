@@ -3,7 +3,7 @@ import 'package:flutter_noksan/components/drawer/customDrawer.dart';
 import 'package:flutter_noksan/layout/largeHeader.dart';
 import 'package:flutter_noksan/layout/smallHeader.dart';
 import 'package:flutter_noksan/pages/main.dart';
-import 'package:flutter_noksan/utils/SizeChecker.dart';
+import 'package:flutter_noksan/utils/sizeChecker.dart';
 
 void main() {
   runApp(MyApp());

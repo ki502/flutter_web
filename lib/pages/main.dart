@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_noksan/components/button/customInkwellButton.dart';
-import 'package:flutter_noksan/utils/SizeChecker.dart';
+import 'package:flutter_noksan/utils/sizeChecker.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
 class Main extends StatefulWidget {
