@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_noksan/components/drawer/customDrawer.dart';
-import 'package:flutter_noksan/layout/largeHeader.dart';
-import 'package:flutter_noksan/layout/smallHeader.dart';
-import 'package:flutter_noksan/pages/main.dart';
-import 'package:flutter_noksan/utils/sizeChecker.dart';
+import 'package:flutter_web/components/drawer/customDrawer.dart';
+import 'package:flutter_web/layout/footer.dart';
+import 'package:flutter_web/layout/largeHeader.dart';
+import 'package:flutter_web/layout/smallHeader.dart';
+import 'package:flutter_web/pages/main.dart';
+import 'package:flutter_web/utils/sizeChecker.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,11 +16,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Noksan',
+      title: 'flutter_web',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Noksan'),
+      home: MyHomePage(title: 'flutter_web'),
     );
   }
 }
@@ -34,15 +35,33 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final ScrollController scrollController = ScrollController();
+  double scrollPosition = 0;
+
+  @override
+  void initState() {
+    scrollController.addListener(() {
+      setState(() {
+        scrollPosition = scrollController.position.pixels;
+      });
+    });
+
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    var header =
-        (SizeChecker.isSmallScreen(context) ? SmallHeader() : LargeHeader());
+    var header = (SizeChecker.isSmallScreen(context)
+        ? SmallHeader(scrollPosition > 250 ? 1 : 0.5)
+        : LargeHeader(scrollPosition > 750 ? 1 : 0.5));
 
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: header as PreferredSizeWidget,
-      body: SingleChildScrollView(child: Main()),
+      body: SingleChildScrollView(
+        child: Column(children: [Main(), Footer()]),
+        controller: scrollController,
+      ),
       drawer: CustomDrawer(context),
     );
   }

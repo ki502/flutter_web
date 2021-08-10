@@ -11,7 +11,7 @@ class CustomDrawer extends Drawer {
               decoration: BoxDecoration(
                 color: Colors.blue,
               ),
-              child: Text('Noksan'),
+              child: Text('flutter_web'),
             ),
             ListTile(
               title: const Text('Test1'),

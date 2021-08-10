@@ -7,15 +7,16 @@ class SmallHeader extends AppBar {
   final double elevation;
   final Widget title;
   final IconThemeData iconTheme;
+  final double opacity;
 
-  SmallHeader()
-      : backgroundColor = Colors.blueGrey.withOpacity(0.5),
+  SmallHeader(this.opacity)
+      : backgroundColor = Colors.lightBlue.shade200.withOpacity(opacity),
         elevation = 0,
         title = Text(
-          'Test',
+          '동물의 왕국',
           style: TextStyle(
-            color: Colors.black,
+            color: Colors.white,
           ),
         ),
-        iconTheme = IconThemeData(color: Colors.black);
+        iconTheme = IconThemeData(color: Colors.white);
 }
