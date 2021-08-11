@@ -8,8 +8,9 @@ class SmallHeader extends AppBar {
   final Widget title;
   final IconThemeData iconTheme;
   final double opacity;
+  final Function? onClickMenu;
 
-  SmallHeader(this.opacity)
+  SmallHeader(this.opacity, {this.onClickMenu})
       : backgroundColor = Colors.lightBlue.shade200.withOpacity(opacity),
         elevation = 0,
         title = Text(

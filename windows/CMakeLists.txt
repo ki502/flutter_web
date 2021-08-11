@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.15)
-project(flutter_noksan LANGUAGES CXX)
+project(flutter_web LANGUAGES CXX)
 
-set(BINARY_NAME "flutter_noksan")
+set(BINARY_NAME "flutter_web")
 
 cmake_policy(SET CMP0063 NEW)
 

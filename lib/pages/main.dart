@@ -29,7 +29,7 @@ class MainState extends State<Main> {
     List<String> weekPictureCrouselList = [
       "https://cdn.imweb.me/thumbnail/20170922/59c4da84ac052.jpg",
       "https://image-notepet.akamaized.net/resize/620x-/seimage/20191113%2Fa0908d3caf2d3b9f07c5d1d931647cf1.png",
-      "https://lh3.googleusercontent.com/proxy/p7cCTOSWOTpZmbpew5GOuDxXEeJknmn6tnVgSFeWoLsu4UcLQhhtryeQvxfcRHCVyIVMsJmLTu5FAY7bjLPPbjjb3Gu87Wnj2RNEDncMoFaE8mK5YA"
+      "https://blog.kakaocdn.net/dn/bawEZG/btqDGItxJy1/zhSaAFFLFk1jpQlTvlANM0/img.png"
     ];
 
     List<Map<String, Object>> mainList = [
