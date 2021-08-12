@@ -26,6 +26,11 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: MyHomePage(title: 'flutter_web', menu: Menu.main),
+      onGenerateRoute: (settings) {
+        print(settings);
+        String name = settings.name ?? "/";
+        Navigator.of(context).pushNamed(name);
+      },
       routes: <String, WidgetBuilder>{
         '/dart': (BuildContext context) =>
             MyHomePage(title: 'flutter_web', menu: Menu.dart),
