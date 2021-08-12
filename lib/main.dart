@@ -8,11 +8,10 @@ import 'package:flutter_web/pages/customTab.dart';
 import 'package:flutter_web/pages/main.dart';
 import 'package:flutter_web/pages/dart.dart';
 import 'package:flutter_web/utils/sizeChecker.dart';
-import 'package:flutter_web/config/nonweb.dart'
-    if (dart.library.html) 'package:flutter_web/config/web.dart';
+import 'package:url_strategy/url_strategy.dart';
 
 void main() {
-  configureApp();
+  setPathUrlStrategy();
   runApp(MyApp());
 }
 
