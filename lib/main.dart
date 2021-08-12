@@ -4,6 +4,7 @@ import 'package:flutter_web/datas/menu.dart';
 import 'package:flutter_web/layout/footer.dart';
 import 'package:flutter_web/layout/largeHeader.dart';
 import 'package:flutter_web/layout/smallHeader.dart';
+import 'package:flutter_web/pages/customTab.dart';
 import 'package:flutter_web/pages/main.dart';
 import 'package:flutter_web/pages/dart.dart';
 import 'package:flutter_web/utils/sizeChecker.dart';
@@ -28,6 +29,8 @@ class MyApp extends StatelessWidget {
       routes: <String, WidgetBuilder>{
         '/dart': (BuildContext context) =>
             MyHomePage(title: 'flutter_web', menu: Menu.dart),
+        '/tab': (BuildContext context) =>
+            MyHomePage(title: 'flutter_web', menu: Menu.tab),
       },
     );
   }
@@ -59,21 +62,12 @@ class _MyHomePageState extends State<MyHomePage> {
     super.initState();
   }
 
-  void onClickMenu(Menu menu) {
-    switch (menu) {
-      case Menu.dart:
-        Navigator.of(context).pushNamed("/dart");
-        break;
-      default:
-        Navigator.of(context).pushNamed("/");
-        break;
-    }
-  }
-
   Widget getMenu() {
     switch (this.widget.menu) {
       case Menu.dart:
         return Self();
+      case Menu.tab:
+        return CustomTab(position: this.scrollPosition);
       default:
         return Main();
     }
@@ -82,9 +76,8 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     var header = (SizeChecker.isSmallScreen(context)
-        ? SmallHeader(scrollPosition > 250 ? 1 : 0.5, onClickMenu: onClickMenu)
-        : LargeHeader(scrollPosition > 750 ? 1 : 0.5,
-            onClickMenu: onClickMenu));
+        ? SmallHeader(scrollPosition > 250 ? 1 : 0.5)
+        : LargeHeader(scrollPosition > 750 ? 1 : 0.5));
 
     return Scaffold(
       extendBodyBehindAppBar: true,

@@ -30,7 +30,7 @@ class LargeHeaderState extends State<LargeHeader> {
           children: [
             GestureDetector(
               onTap: () {
-                onClickMenu(Menu.main);
+                Menu.main.move(context);
               },
               child: Text(
                 '동물의 왕국',
@@ -47,7 +47,7 @@ class LargeHeaderState extends State<LargeHeader> {
                     hoverFontColor: Colors.blueGrey,
                     hoverCallback: isHoverCallback,
                     tabCallback: () {
-                      onClickMenu(Menu.main);
+                      Menu.main.move(context);
                     },
                   ),
                   SizedBox(width: screenSize.width / 40),
@@ -57,14 +57,19 @@ class LargeHeaderState extends State<LargeHeader> {
                     hoverFontColor: Colors.blueGrey,
                     hoverCallback: isHoverCallback,
                     tabCallback: () {
-                      onClickMenu(Menu.dart);
+                      Menu.dart.move(context);
                     },
                   ),
                   SizedBox(width: screenSize.width / 40),
-                  CustomInkwellButton("TEST2",
-                      fontColor: Colors.white,
-                      hoverFontColor: Colors.blueGrey,
-                      hoverCallback: isHoverCallback),
+                  CustomInkwellButton(
+                    "Tab Page",
+                    fontColor: Colors.white,
+                    hoverFontColor: Colors.blueGrey,
+                    hoverCallback: isHoverCallback,
+                    tabCallback: () {
+                      Menu.tab.move(context);
+                    },
+                  ),
                   SizedBox(width: screenSize.width / 40),
                   CustomInkwellButton("TEST2",
                       fontColor: Colors.white,
